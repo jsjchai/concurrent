@@ -22,6 +22,7 @@ public class T {
     public static void main(String[] args) {
         T t = new T();
         for(int i = 0; i < 10 ; i++){
+
             new Thread(t::m).start();
         }
     }
