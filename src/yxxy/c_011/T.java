@@ -12,27 +12,38 @@ package yxxy.c_011;
 import java.util.concurrent.TimeUnit;
 
 public class T {
-    int count = 0;
+
+   private int count = 0;
+
 
     synchronized void m() {
         System.out.println(Thread.currentThread().getName() + " start");
-        while (true) {
+
+        while (count < 20) {
+
             count++;
             System.out.println(Thread.currentThread().getName() + " count = " + count);
             try {
                 TimeUnit.SECONDS.sleep(1);
 
             } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
                 e.printStackTrace();
             }
 
             if (count == 5) {
-                int i = 1 / 0; //此处抛出异常，锁将被释放，要想不被释放，可以在这里进行catch，然后让循环继续
+                //此处抛出异常，锁将被释放，要想不被释放，可以在这里进行catch，然后让循环继续
+                int i = 1 / 0;
                 System.out.println(i);
             }
         }
     }
 
+    /**
+     * t1线程抛出异常，锁释放，count=5,t2执行
+     * t1线程不抛出异常，count=20,锁释放，t2执行
+     * @param args
+     */
     public static void main(String[] args) {
         T t = new T();
         Runnable r = new Runnable() {
@@ -43,6 +54,7 @@ public class T {
             }
 
         };
+
         new Thread(r, "t1").start();
 
         try {
