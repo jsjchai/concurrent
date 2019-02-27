@@ -13,3 +13,4 @@ java concurrent study
 10. 子类继承父类情况下，调用子类，synchronized的锁是可重入的-c_010
 11. 抛出异常，锁将被释放-c_011
 12. volatile
+13. 
