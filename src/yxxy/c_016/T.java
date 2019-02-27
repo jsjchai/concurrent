@@ -19,6 +19,7 @@ public class T {
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             e.printStackTrace();
         }
         //业务逻辑中只有下面这句需要sync，这时不应该给整个方法上锁
@@ -28,6 +29,7 @@ public class T {
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             e.printStackTrace();
         }
     }
@@ -37,6 +39,7 @@ public class T {
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             e.printStackTrace();
         }
         //业务逻辑中只有下面这句需要sync，这时不应该给整个方法上锁
@@ -48,6 +51,7 @@ public class T {
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             e.printStackTrace();
         }
     }

@@ -32,6 +32,7 @@ public class T {
             try {
                 o.join();
             } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
                 e.printStackTrace();
             }
         });

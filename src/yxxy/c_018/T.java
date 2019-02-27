@@ -11,8 +11,6 @@
  */
 package yxxy.c_018;
 
-import java.util.concurrent.TimeUnit;
-
 public class T {
 
     String s1 = "Hello";
