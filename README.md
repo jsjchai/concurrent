@@ -1,6 +1,8 @@
 # concurrent
 java concurrent study
 
+马士兵高并发编程系列：https://www.bilibili.com/video/av11076511
+
 1. synchronized(对象锁)-c_001
 2. synchronized(this)-c_002
 3. synchronized(方法)-c_003
@@ -20,3 +22,10 @@ java concurrent study
 17. 对象发生改变，锁释放-c_017
 18. 不要以字符串常量作为锁定对象-c_018
 19. 写两个线程，线程1添加10个元素到容器中，线程2实现监控元素的个数，当个数到5个时，线程2给出提示并结束-c_019
+20. 可重入锁ReentrantLock-c_020
+21. Condition实现生产者和消费者问题-c_021
+22. ThreadLocal-c_022
+23  线程安全的单例模式-c_023
+24. 模拟售票问题c_024
+25. 并发容器-c_025
+26. 线程池-c_026
